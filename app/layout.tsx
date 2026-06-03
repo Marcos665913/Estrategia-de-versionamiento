@@ -24,6 +24,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <body className={`${geistSans.variable} ${geistMono.variable}`}>
+        <CartProvider>
+          {children}
+          <CartDrawer />
+        </CartProvider>
+      </body>
       <body className={`${inter.variable} ${playfair.variable}`}>{children}</body>
     </html>
   );

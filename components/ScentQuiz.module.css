@@ -1,0 +1,298 @@
+.section {
+  padding: 100px 0;
+  background-color: var(--bg-secondary);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.quizContainer {
+  max-width: 800px;
+  margin: 0 auto;
+  min-height: 480px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.intro, .questionStep, .result {
+  animation: slideFadeIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes slideFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.title {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 1rem;
+  color: var(--text-main);
+}
+
+.subtitle {
+  font-size: 0.95rem;
+  text-align: center;
+  color: var(--text-muted);
+  max-width: 500px;
+  margin: 0 auto 3rem auto;
+  line-height: 1.6;
+  letter-spacing: 0.05em;
+}
+
+.startCard {
+  text-align: center;
+  padding: 3rem 2rem;
+  background-color: var(--bg-primary);
+  border: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.startCard p {
+  color: var(--text-muted);
+  font-size: 1rem;
+  max-width: 450px;
+  line-height: 1.6;
+}
+
+.startBtn {
+  background-color: var(--accent);
+  color: var(--bg-primary);
+  padding: 1rem 3rem;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  font-weight: 600;
+  transition: all 0.3s;
+}
+
+.startBtn:hover {
+  background-color: var(--text-main);
+  transform: translateY(-2px);
+}
+
+.progressContainer {
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto 2.5rem auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.progressBar {
+  height: 2px;
+  background-color: rgba(253, 251, 247, 0.1);
+  position: relative;
+  width: 100%;
+}
+
+.progressFill {
+  height: 100%;
+  background-color: var(--accent);
+  transition: width 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.progressText {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--accent);
+  text-align: center;
+}
+
+.qText {
+  font-family: var(--font-serif);
+  font-size: 1.8rem;
+  text-align: center;
+  margin-bottom: 2.5rem;
+  color: var(--text-main);
+}
+
+.optionsGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.2rem;
+}
+
+@media (min-width: 600px) {
+  .optionsGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.optionCard {
+  background-color: var(--bg-primary);
+  border: 1px solid var(--border);
+  padding: 2.5rem 1.5rem;
+  text-align: center;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  min-height: 180px;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.optionCard:hover {
+  border-color: var(--accent);
+  box-shadow: 0 10px 20px rgba(212, 175, 55, 0.05);
+  transform: translateY(-4px);
+}
+
+.optionCardSelected {
+  border-color: var(--accent);
+  background-color: rgba(212, 175, 55, 0.04);
+}
+
+.optionCard strong {
+  font-size: 1.1rem;
+  color: var(--text-main);
+  font-weight: 500;
+}
+
+.optionCard p {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  line-height: 1.4;
+}
+
+.resultContainer {
+  background-color: var(--bg-primary);
+  border: 1px solid var(--border);
+  padding: 3rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@media (min-width: 768px) {
+  .resultContainer {
+    flex-direction: row;
+    gap: 3rem;
+    padding: 4rem;
+  }
+}
+
+.resultImageWrapper {
+  position: relative;
+  width: 260px;
+  height: 340px;
+  flex-shrink: 0;
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border);
+}
+
+.resultImage {
+  object-fit: cover;
+}
+
+.resultInfo {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  margin-top: 2rem;
+}
+
+@media (min-width: 768px) {
+  .resultInfo {
+    margin-top: 0;
+  }
+}
+
+.resultOver {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.resultName {
+  font-family: var(--font-serif);
+  font-size: 2.2rem;
+  color: var(--text-main);
+  margin-bottom: 0.5rem;
+}
+
+.resultDescription {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--text-muted);
+}
+
+.resultNotes {
+  font-size: 0.9rem;
+  color: var(--text-main);
+  border-left: 2px solid var(--accent);
+  padding-left: 1rem;
+  margin: 0.5rem 0;
+}
+
+.resultNotes strong {
+  display: block;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  color: var(--accent);
+  letter-spacing: 0.1em;
+  margin-bottom: 0.2rem;
+}
+
+.resultPrice {
+  font-size: 1.4rem;
+  color: var(--accent-light);
+  font-weight: 600;
+}
+
+.resultActions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+
+.addBtn {
+  background-color: var(--accent);
+  color: var(--bg-primary);
+  padding: 0.9rem 2rem;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+  font-weight: 600;
+  transition: all 0.3s;
+}
+
+.addBtn:hover {
+  background-color: var(--text-main);
+}
+
+.resetBtn {
+  background-color: transparent;
+  color: var(--text-main);
+  border: 1px solid var(--border);
+  padding: 0.9rem 2rem;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+  font-weight: 600;
+  transition: all 0.3s;
+}
+
+.resetBtn:hover {
+  border-color: var(--text-main);
+  background-color: var(--bg-secondary);
+}
