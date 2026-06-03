@@ -10,7 +10,7 @@ const Hero = () => {
         <span className={styles.tagline}>Limited Edition</span>
         <h1 className={styles.title}>The Art of Invisible Elegance</h1>
         <p className={styles.description}>
-          Discover curated fragrances from the world's most exclusive niche houses. 
+          Discover curated fragrances from the world&apos;s most exclusive niche houses. 
           Crafted for those who leave a legacy in their wake.
         </p>
         <div className={styles.cta}>

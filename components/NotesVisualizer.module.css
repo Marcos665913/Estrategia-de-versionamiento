@@ -1,0 +1,193 @@
+.section {
+  padding: 100px 0;
+  background-color: var(--bg-primary);
+  border-bottom: 1px solid var(--border);
+}
+
+.title {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 1rem;
+  color: var(--text-main);
+}
+
+.subtitle {
+  font-size: 0.95rem;
+  text-align: center;
+  color: var(--text-muted);
+  max-width: 500px;
+  margin: 0 auto 4rem auto;
+  line-height: 1.6;
+  letter-spacing: 0.05em;
+}
+
+.visualizerGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+@media (min-width: 768px) {
+  .visualizerGrid {
+    grid-template-columns: 1.1fr 1.2fr;
+    gap: 5rem;
+  }
+}
+
+.pyramidWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.svgPyramid {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  filter: drop-shadow(0 15px 30px rgba(0, 0, 0, 0.7));
+}
+
+.pyramidLayer {
+  cursor: pointer;
+  fill: #161616;
+  stroke: var(--border);
+  stroke-width: 1.5;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.pyramidLayer:hover {
+  fill: rgba(212, 175, 55, 0.08);
+  stroke: var(--accent);
+}
+
+.pyramidLayerActive {
+  fill: rgba(212, 175, 55, 0.18) !important;
+  stroke: var(--accent) !important;
+  stroke-width: 2.5;
+}
+
+.layerLabel {
+  font-family: var(--font-serif);
+  font-size: 13px;
+  fill: var(--text-muted);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  pointer-events: none;
+  transition: fill 0.3s, font-weight 0.3s;
+}
+
+.layerLabelActive {
+  fill: var(--accent-light);
+  font-weight: bold;
+}
+
+.infoPanel {
+  min-height: 380px;
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border);
+  padding: 2.5rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.layerTitleWrapper {
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.layerTitle {
+  font-family: var(--font-serif);
+  font-size: 1.8rem;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.5rem;
+}
+
+.layerDuration {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+  font-weight: 600;
+  display: inline-block;
+  border: 1px solid var(--border);
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+}
+
+.layerRole {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--text-muted);
+  margin-bottom: 2rem;
+}
+
+.ingredientsTitle {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--accent);
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.ingredientsList {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.ingredient {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  animation: fadeInStep 0.5s ease forwards;
+}
+
+@keyframes fadeInStep {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.ingredientName {
+  font-family: var(--font-serif);
+  font-size: 1.1rem;
+  color: var(--text-main);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.ingredientMethod {
+  font-size: 0.7rem;
+  color: var(--accent-light);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  border: 1px dashed rgba(212, 175, 55, 0.4);
+  padding: 0.1rem 0.4rem;
+}
+
+.ingredientDesc {
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: var(--text-muted);
+}
+
+.helperText {
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  font-style: italic;
+}

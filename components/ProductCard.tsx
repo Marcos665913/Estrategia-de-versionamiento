@@ -1,6 +1,9 @@
+"use client";
+
 import React from "react";
 import styles from "./ProductCard.module.css";
 import Image from "next/image";
+import { useCart } from "@/context/CartContext";
 
 interface ProductCardProps {
   id: number;
@@ -11,7 +14,13 @@ interface ProductCardProps {
   notes: string;
 }
 
-const ProductCard: React.FC<ProductCardProps> = ({ name, house, price, image, notes }) => {
+const ProductCard: React.FC<ProductCardProps> = ({ id, name, house, price, image, notes }) => {
+  const { addToCart } = useCart();
+
+  const handleAdd = () => {
+    addToCart({ id, name, price, image, notes });
+  };
+
   return (
     <div className={styles.card}>
       <div className={styles.imageWrapper}>
@@ -23,7 +32,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ name, house, price, image, no
           className={styles.image}
         />
         <div className={styles.quickAdd}>
-          <button>Add to Bag</button>
+          <button onClick={handleAdd}>Add to Bag</button>
         </div>
       </div>
       <div className={styles.info}>
