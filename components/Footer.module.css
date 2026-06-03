@@ -1,0 +1,133 @@
+.footer {
+  background-color: var(--bg-secondary);
+  border-top: 1px solid var(--border);
+  padding: 80px 0 40px;
+  color: var(--text-main);
+}
+
+.top {
+  display: grid;
+  grid-template-columns: 2fr 2fr 1.5fr;
+  gap: 4rem;
+  margin-bottom: 60px;
+}
+
+.brand h3 {
+  font-size: 1.5rem;
+  letter-spacing: 0.2em;
+  margin-bottom: 1.5rem;
+}
+
+.brand p {
+  color: var(--text-muted);
+  line-height: 1.8;
+  font-size: 0.9rem;
+  max-width: 350px;
+}
+
+.links {
+  display: flex;
+  gap: 4rem;
+}
+
+.group h4 {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 1.5rem;
+  font-family: var(--font-sans);
+  font-weight: 600;
+}
+
+.group ul li {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-bottom: 0.8rem;
+  cursor: pointer;
+}
+
+.group ul li:hover {
+  color: var(--accent);
+}
+
+.newsletter h4 {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 1.5rem;
+  font-family: var(--font-sans);
+  font-weight: 600;
+}
+
+.newsletter p {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-bottom: 1.5rem;
+}
+
+.form {
+  display: flex;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 5px;
+}
+
+.form input {
+  background: none;
+  border: none;
+  flex: 1;
+  padding: 10px 0;
+  color: var(--text-main);
+  font-size: 0.8rem;
+}
+
+.form input:focus {
+  outline: none;
+}
+
+.form button {
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 40px;
+  border-top: 1px solid var(--border);
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  letter-spacing: 0.1em;
+}
+
+.social {
+  display: flex;
+  gap: 2rem;
+}
+
+@media (max-width: 1024px) {
+  .top {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .top {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  
+  .links {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  
+  .bottom {
+    flex-direction: column;
+    gap: 2rem;
+    text-align: center;
+  }
+}

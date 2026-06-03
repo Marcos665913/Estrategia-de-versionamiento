@@ -1,65 +1,45 @@
-import Image from "next/image";
+import Navbar from "@/components/Navbar";
+import Hero from "@/components/Hero";
+import ProductGrid from "@/components/ProductGrid";
+import Footer from "@/components/Footer";
+import styles from "./page.module.css";
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
+    <div className={styles.wrapper}>
+      <Navbar />
+      <main>
+        <Hero />
+        <ProductGrid />
+        
+        {/* Future Improvements Section - As requested by user */}
+        <section className={styles.futureImprovements}>
+          <div className="luxury-container">
+            <div className={styles.improveCard}>
+              <h2>Coming to Our Atelier</h2>
+              <p>We are constantly evolving the digital fragrance experience. In future releases, we plan to introduce:</p>
+              <ul className={styles.improveList}>
+                <li>
+                  <span className={styles.bullet}>01</span>
+                  <strong>Scent Profile Quiz</strong>
+                  <p>Discover your olfactory signature through an interactive sensory journey.</p>
+                </li>
+                <li>
+                  <span className={styles.bullet}>02</span>
+                  <strong>Fragrance Notes Visualizer</strong>
+                  <p>Explore the complex architecture of our scents with a deep dive into Top, Heart, and Base notes.</p>
+                </li>
+                <li>
+                  <span className={styles.bullet}>03</span>
+                  <strong>The Alchemist Club</strong>
+                  <p>Exclusive membership providing early access to rare batches and artisanal samples.</p>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
       </main>
+      <Footer />
     </div>
   );
 }
